@@ -5,10 +5,12 @@ import pandas as pd
 
 from functions import *
 
-train_data = pd.read_csv("file name")
+spam_path = "/Users/mogamimorimodo/CSDS440-ML/440data/voting/voting.data"
+train_data = pd.read_csv(spam_path)
 
-tree = ID3(train_data, 'label')
-test_data_m = pd.read_csv("file name")
+tree = ID3(train_data, "1.1")
+test_data_m = pd.read_csv(spam_path)
 
-accuracy = evaluate(tree, test_data_m, 'label')
+accuracy = evaluate(tree, test_data_m, "1.1")
 
+print("accuracy is: ", accuracy)

@@ -100,7 +100,7 @@ def generate_subtree(train_data, feature, class_list, label):
         feature_value_data = train_data[train_data[feature] == feature_value]
         flag_for_node = False
         for c in class_list:
-            class_num = feature_value[feature_value[label] == c].shape[0]
+            class_num = feature_value_data[feature_value_data[label] == c].shape[0]
             if class_num == count:
                 tree[feature_value] = c
                 train_data = train_data[train_data[feature] != feature_value]
