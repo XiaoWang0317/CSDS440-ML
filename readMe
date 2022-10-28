@@ -1,0 +1,47 @@
+Bayes Theorem:
+										Likelihood * Class prior probability
+				Posterior Probability = -------------------------------------
+											Predictor prior probability
+
+							  			 P(x|c) * p(c)
+							   P(c|x) = ------------------
+											  P(x)
+
+		Attributes:
+				likelihoods: Likelihood of each feature per class
+				class_priors: Prior probabilities of classes
+				pred_priors: Prior probabilities of features
+				features: All features of dataset
+
+My testing data below
+
+Outlook   Temp    Humidity   Windy  Play
+Rainy     Hot     High       f      no
+Rainy     Hot     High       t      no
+Overcast  Hot     High       f      yes
+Sunny     Mild    High       f      yes
+Sunny     Cool    Normal     f      yes
+Sunny     Cool    Normal     t      no
+Overcast  Cool    Normal     t      yes
+Rainy     Mild    High       f      no
+Rainy     Cool    Normal     f      yes
+Sunny     Mild    Normal     f      yes
+Rainy     Mild    Normal     t      yes
+Overcast  Mild    High       t      yes
+Overcast  Hot     Normal     f      yes
+Sunny     Mild    High       t      no
+
+
+
+
+
+
+In the code:
+1. Input "data" should be pandas data frame, like the image shows
+2. Input "features" should have same columns number as "input". In the example, your input "features" should be:
+    ['Outlook',   'Temp',    'Humidity',   'Windy',  'Play']
+   Data in the column 'Play' should be the labels (y), but it should have a name in "features"
+3. liklihood_neg is not always for negative, liklihood_pos is not always for positive. Just two dicts for the binary classification problem
+4. The predict result is an array storing results of each piece of data
+5. Learning more from: https://medium.com/@rangavamsi5/na%C3%AFve-bayes-algorithm-implementation-from-scratch-in-python-7b2cc39268b9 (Do not use his code, toxic!)
+
